@@ -1,6 +1,8 @@
 <table>
 <tr><th>Coin Specs </th><th>Reward Schema</th></tr>
 <tr><td>
+  
+![eSports Coin - ESC logo](https://user-images.githubusercontent.com/93952104/141866328-6db4d184-457d-416e-b685-d349e01ca689.png)
 
 Coin Name | eSports Coin
 :--- | :---
