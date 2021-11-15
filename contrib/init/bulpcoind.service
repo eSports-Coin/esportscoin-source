@@ -1,0 +1,26 @@
+[Unit]
+Description=eSportscoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=esportscoin
+Group=esportscoin
+
+Type=forking
+PIDFile=/var/lib/esportscoind/esportscoind.pid
+
+ExecStart=/usr/bin/esportscoind -daemon -pid=/var/lib/esportscoind/esportscoind.pid \
+          -conf=/etc/esportscoin/esportscoin.conf -datadir=/var/lib/esportscoind
+
+ExecStop=-/usr/bin/esportscoin-cli -conf=/etc/esportscoin/esportscoin.conf \
+         -datadir=/var/lib/esportscoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

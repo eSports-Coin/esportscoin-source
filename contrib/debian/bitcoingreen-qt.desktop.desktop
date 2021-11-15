@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=eSportscoin
+Comment=eSportscoin P2P Cryptocurrency
+Exec=esportscoin-qt %u
+Terminal=false
+Type=Application
+Icon=esportscoin128
+MimeType=x-scheme-handler/esportscoin;
+Categories=Office;Finance;
+Name[en_US]=esportscoin-qt.desktop
