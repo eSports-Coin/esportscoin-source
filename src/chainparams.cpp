@@ -53,30 +53,30 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 //    timestamp before)
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x00000f39894dbf471a77bad29d4af52d37177bad6136d0127d00410e26d5dad1"));
+    boost::assign::map_list_of(0, uint256("0x00000e7ae64cd680dba3be71849a386fa7f79d2b214fe47d5a0e77116305dc87"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1636557105, // * UNIX timestamp of last checkpoint block
+    1638826954, // * UNIX timestamp of last checkpoint block
     0,       // * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x0000f38bf5e1787dc8cf4586a0935d741569fd8646602b0c44a5b88b131d12fc"));
+    boost::assign::map_list_of(0, uint256("0x00007df27996c648cd1e2de7c2e509e375587df31ffd713d1e23e8241ebadb36"));
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1636557199, // * UNIX timestamp of last checkpoint block
+    1638826956, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x000063845f1b4fdb4c35ba1399c93a7551a98d56c435cd5469b2f9ade56a7ccf"));
+    boost::assign::map_list_of(0, uint256("0x00009e0fed1c6635dec73739cc6bdca607cafa367b6c60dab7b34261437dd9f3"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1636557240, // * UNIX timestamp of last checkpoint block
+    1638826958, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
 };
@@ -147,13 +147,14 @@ genesis hash: 00000c9cbc78555e74fea2ddab4a9d3815ddbec5bca992e1137e9a74ee658267
         genesis.hashPrevBlock          = 0;
         genesis.hashMerkleRoot         = genesis.BuildMerkleTree();
         genesis.nVersion               = 1;
-        genesis.nTime                  = 1636557105;
+        genesis.nTime                  = 1638826954;
         genesis.nBits                  = 0x1e0ffff0;
-        genesis.nNonce                 = 34347;
+        genesis.nNonce                 = 136019;
 
+		
 
         hashGenesisBlock               = genesis.GetHash();
-        assert(hashGenesisBlock        == uint256("0x00000f39894dbf471a77bad29d4af52d37177bad6136d0127d00410e26d5dad1"));
+        assert(hashGenesisBlock        == uint256("0x00000e7ae64cd680dba3be71849a386fa7f79d2b214fe47d5a0e77116305dc87"));
         assert(genesis.hashMerkleRoot  == uint256("0x29c4ff2efb480454370e879a98b250b6a2eb18ecbfa0f6f0a853143a498a1b5b"));
  
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,  33);  // Start with 'E' from https://en.bitcoin.it/wiki/List_of_address_prefixes
@@ -170,7 +171,7 @@ genesis hash: 00000c9cbc78555e74fea2ddab4a9d3815ddbec5bca992e1137e9a74ee658267
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         vSeeds.push_back(CDNSSeedData("209.145.60.254", "209.145.60.254"));
-        vSeeds.push_back(CDNSSeedData("209.145.61.42 ", "209.145.61.42 "));
+        vSeeds.push_back(CDNSSeedData("209.145.61.42", "209.145.61.42"));
 
 
         fMiningRequiresPeers           = true;
@@ -235,12 +236,14 @@ public:
         nMaxMoneyOut                   = 100000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime                  = 1636557199;
+        genesis.nTime                  = 1638826956;
         genesis.nBits                  = 0x1e0ffff0;
-        genesis.nNonce                 = 59750;
+        genesis.nNonce                 = 35494;
+		
+		
 
         hashGenesisBlock               = genesis.GetHash();
-        assert(hashGenesisBlock        == uint256("0x0000f38bf5e1787dc8cf4586a0935d741569fd8646602b0c44a5b88b131d12fc"));
+        assert(hashGenesisBlock        == uint256("0x00007df27996c648cd1e2de7c2e509e375587df31ffd713d1e23e8241ebadb36"));
         assert(genesis.hashMerkleRoot  == uint256("0x29c4ff2efb480454370e879a98b250b6a2eb18ecbfa0f6f0a853143a498a1b5b"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,  92);  // Start with 'b' from https://en.bitcoin.it/wiki/List_of_address_prefixes
@@ -301,14 +304,14 @@ public:
         nTargetTimespan = 24 * 60 * 60; // eSportscoin: 1 day
         nTargetSpacing = 2 * 60;        // eSportscoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1636557240;
+        genesis.nTime = 1638826958;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 54836;
+        genesis.nNonce = 17892;
 
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 30007;
-        assert(hashGenesisBlock == uint256("0x000063845f1b4fdb4c35ba1399c93a7551a98d56c435cd5469b2f9ade56a7ccf"));
+        assert(hashGenesisBlock == uint256("0x00009e0fed1c6635dec73739cc6bdca607cafa367b6c60dab7b34261437dd9f3"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
