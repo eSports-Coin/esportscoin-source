@@ -13,13 +13,13 @@
  */
 
 //! Current Protocol Version
-static const int PROTOCOL_VERSION = 70910;
+static const int PROTOCOL_VERSION = 70920;
 
 //! initial proto version, to be increased after version/verack negotiation
-static const int INIT_PROTO_VERSION = 200;
+static const int INIT_PROTO_VERSION = 300;
 
 //! In this version, 'getheaders' was introduced.
-static const int GETHEADERS_VERSION = 70077;
+static const int GETHEADERS_VERSION = 70078;
 
 //! disconnect from peers older than this proto version
 static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT_1 = 70900;
